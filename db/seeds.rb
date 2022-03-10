@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+(1..3).map do |i|
+  checklist = Checklist.create!(name: "Checklist #{i}")
+  (1..3).each do |i|
+    checklist.checklist_items.create!(name: "Item #{i}")
+  end
+end

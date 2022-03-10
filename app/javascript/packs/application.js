@@ -10,7 +10,7 @@ import { InertiaProgress } from '@inertiajs/progress'
 // https://milligram.io/
 import 'milligram/dist/milligram.min.css'
 
-import Layout from './layouts/Layout.vue'
+import Layout from './layouts/Layout'
 
 Rails.start()
 InertiaProgress.init()
@@ -23,8 +23,8 @@ createInertiaApp({
     return page
   },
   setup({ el, App, props, plugin }) {
-    createApp({ render: () => h(App, props) })
-      .use(plugin)
-      .mount(el)
+    const app = createApp({ render: () => h(App, props) })
+    app.config.globalProperties.window = window
+    app.use(plugin).mount(el)
   }
 })

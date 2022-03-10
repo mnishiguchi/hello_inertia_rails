@@ -2,9 +2,11 @@
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <Link href="/" class="navbar-item"> Home</Link>
     &middot;
-    <Link href="/contact" class="navbar-item">Contact</Link>
+    <Link href="/checklists" class="navbar-item">Checklists</Link>
     &middot;
     <Link href="/about" class="navbar-item">About</Link>
+    &middot;
+    <a href="/rails" class="navbar-item">Rails</a>
   </nav>
 </template>
 

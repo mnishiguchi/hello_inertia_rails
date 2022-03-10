@@ -4,6 +4,8 @@
   </Head>
 
   <h1>{{ title }}</h1>
+
+  <p>This is an <a href="https://inertiajs.com">inertiajs</a>-powered page.</p>
 </template>
 
 <script>
