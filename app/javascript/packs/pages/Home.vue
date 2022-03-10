@@ -4,7 +4,8 @@
   </Head>
 
   <h1>{{ title }}</h1>
-  <p>This page was loaded at {{ time }}</p>
+
+  <p>This is an <a href="https://inertiajs.com">inertiajs</a>-powered page.</p>
 </template>
 
 <script>
@@ -14,9 +15,7 @@ export default {
   components: {
     Head
   },
-  props: {
-    time: String
-  },
+  props: {},
   data: function () {
     return {
       title: 'Home'

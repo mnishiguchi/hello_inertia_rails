@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+ .invalid-feedback {
+  color: #a94442;
+  display: block;
+  margin: -1rem 0 2rem;
+}

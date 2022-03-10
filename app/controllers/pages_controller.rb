@@ -1,11 +1,10 @@
 class PagesController < ApplicationController
+  # GET /
   def home
-    render inertia: 'Home', props: {
-      time: Time.current.iso8601
-    }
+    render inertia: 'Home', props: {}
   end
 
-  def contact
-    render inertia: 'Contact', props: {}
+  # GET /rails
+  def rails
   end
 end
