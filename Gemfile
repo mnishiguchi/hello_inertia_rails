@@ -14,15 +14,9 @@ gem 'sqlite3', '~> 1.3', '< 1.4'
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
@@ -45,5 +39,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "webpacker", "~> 4.x" # https://github.com/rails/webpacker/tree/4-x-stable
-gem "foreman"
 gem 'psych', '~> 3.x' # v4 has breaking changes
+gem "inertia_rails", "~> 1.11"
+gem "ruby_dig" # https://github.com/Invoca/ruby_dig-archived

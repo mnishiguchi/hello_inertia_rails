@@ -1,18 +1,30 @@
-/* eslint no-console:0 */
 // This file is automatically compiled by Webpack, along with any other files
 // present in this directory. You're encouraged to place your actual application logic in
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
-//
-// To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
-// layout file, like app/views/layouts/application.html.erb
+import Rails from '@rails/ujs'
+import { createApp, h } from 'vue'
+import { createInertiaApp } from '@inertiajs/inertia-vue3'
+import { InertiaProgress } from '@inertiajs/progress'
 
+// https://milligram.io/
+import 'milligram/dist/milligram.min.css'
 
-// Uncomment to copy all static images under ../images to the output folder and reference
-// them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
-// or the `imagePath` JavaScript helper below.
-//
-// const images = require.context('../images', true)
-// const imagePath = (name) => images(name, true)
+import Layout from './layouts/Layout.vue'
 
-console.log('Hello World from Webpacker')
+Rails.start()
+InertiaProgress.init()
+
+// https://inertiajs.com/client-side-setup
+createInertiaApp({
+  resolve: (name) => {
+    const page = require(`./pages/${name}`).default
+    page.layout = page.layout || Layout
+    return page
+  },
+  setup({ el, App, props, plugin }) {
+    createApp({ render: () => h(App, props) })
+      .use(plugin)
+      .mount(el)
+  }
+})
